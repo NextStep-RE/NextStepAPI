@@ -1,0 +1,9 @@
+services:
+  internship:
+    image: mysql:8.0.4
+    container_name: mysql_container
+    environment:
+      MYSQL_DATABASE: 'internship'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '127.0.0.1:3306:3306'
