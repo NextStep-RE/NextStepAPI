@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro
+        http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+    <changeSet id="insert-user" author="aforminte">
+        <insert tableName="users">
+            <column name="first_name" value="John"/>
+            <column name="last_name" value="Doe"/>
+            <column name="email" value="john.doe@example.com"/>
+            <column name="password" value="password123"/>
+            <column name="bio" value="Software engineer with a passion for open-source."/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="first_name" value="Jane"/>
+            <column name="last_name" value="Smith"/>
+            <column name="email" value="jane.smith@example.com"/>
+            <column name="password" value="securePass456"/>
+            <column name="bio" value="Aspiring data scientist who loves solving real-world problems."/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="first_name" value="Michael"/>
+            <column name="last_name" value="Brown"/>
+            <column name="email" value="michael.brown@example.com"/>
+            <column name="password" value="hashMe789"/>
+            <column name="bio" value="Backend developer and Spring Boot enthusiast."/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="first_name" value="Emily"/>
+            <column name="last_name" value="Davis"/>
+            <column name="email" value="emily.davis@example.com"/>
+            <column name="password" value="passw0rd"/>
+            <column name="bio" value="Frontend developer who enjoys crafting beautiful user interfaces."/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="first_name" value="Chris"/>
+            <column name="last_name" value="Wilson"/>
+            <column name="email" value="chris.wilson@example.com"/>
+            <column name="password" value="devLife2024"/>
+            <column name="bio" value="Full-stack developer with a knack for innovation."/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="first_name" value="Sarah"/>
+            <column name="last_name" value="Miller"/>
+            <column name="email" value="sarah.miller@example.com"/>
+            <column name="password" value="pass12345"/>
+            <column name="bio" value="Cybersecurity specialist passionate about protecting data."/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="first_name" value="David"/>
+            <column name="last_name" value="Martinez"/>
+            <column name="email" value="david.martinez@example.com"/>
+            <column name="password" value="p@ssW0rd"/>
+            <column name="bio" value="Cloud computing expert and open-source contributor."/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="first_name" value="Emma"/>
+            <column name="last_name" value="Garcia"/>
+            <column name="email" value="emma.garcia@example.com"/>
+            <column name="password" value="letmein"/>
+            <column name="bio" value="AI researcher exploring the boundaries of deep learning."/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="first_name" value="Daniel"/>
+            <column name="last_name" value="Taylor"/>
+            <column name="email" value="daniel.taylor@example.com"/>
+            <column name="password" value="ilovecoding"/>
+            <column name="bio" value="Game developer who enjoys creating immersive experiences."/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="first_name" value="Sophia"/>
+            <column name="last_name" value="Anderson"/>
+            <column name="email" value="sophia.anderson@example.com"/>
+            <column name="password" value="12345678"/>
+            <column name="bio" value="Mobile developer passionate about cross-platform apps."/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
