@@ -1,9 +1,11 @@
 services:
   internship:
-    image: mysql:8.0.4
+    image: mysql:8.0
+    platform: linux/amd64
     container_name: mysql_container
     environment:
       MYSQL_DATABASE: 'internship'
       MYSQL_ROOT_PASSWORD: 'password'
     ports:
       - '127.0.0.1:3306:3306'
+    restart: unless-stopped
