@@ -1,4 +1,4 @@
-package com.ubb.internship.reqpository;
+package com.ubb.internship.repository;
 
 import com.ubb.internship.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
