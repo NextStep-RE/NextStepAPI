@@ -1,4 +1,4 @@
-package com.ubb.internship.dto;
+package com.ubb.internship.dto.request;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class InternshipDto {
+public class InternshipRequestDto {
     private Long id;
     private String title;
     private Long companyId;
@@ -19,5 +19,4 @@ public class InternshipDto {
     private Date endDate;
     private Date applicationDeadline;
     private List<String> requirements;
-
 }

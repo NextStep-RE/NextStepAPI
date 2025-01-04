@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro
+        http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+    <changeSet id="insert-internship-requirement" author="andrey100f">
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="1" />
+            <column name="requirement" value="Basic knowledge of JavaScript" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="1" />
+            <column name="requirement" value="Understanding of HTML and CSS" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="2" />
+            <column name="requirement" value="Python programming skills" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="2" />
+            <column name="requirement" value="Familiarity with data analysis tools" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="3" />
+            <column name="requirement" value="Knowledge of mobile development frameworks" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="3" />
+            <column name="requirement" value="Basic UI/UX design skills" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="4" />
+            <column name="requirement" value="Experience with Unity or Unreal Engine" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="4" />
+            <column name="requirement" value="Understanding of 3D modeling tools" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="5" />
+            <column name="requirement" value="Strong mathematics background" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="5" />
+            <column name="requirement" value="Experience with TensorFlow or PyTorch" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="6" />
+            <column name="requirement" value="Knowledge of React.js or Angular" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="6" />
+            <column name="requirement" value="Understanding of version control systems" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="7" />
+            <column name="requirement" value="Experience with Node.js" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="7" />
+            <column name="requirement" value="Familiarity with relational databases" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="8" />
+            <column name="requirement" value="Basic knowledge of network security" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="8" />
+            <column name="requirement" value="Understanding of penetration testing tools" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="9" />
+            <column name="requirement" value="Experience with AWS, Azure, or Google Cloud" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="9" />
+            <column name="requirement" value="Understanding of containerization tools" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="10" />
+            <column name="requirement" value="Familiarity with CI/CD pipelines" />
+        </insert>
+
+        <insert tableName="internship_requirements">
+            <column name="internship_id" value="10" />
+            <column name="requirement" value="Basic scripting skills" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>
