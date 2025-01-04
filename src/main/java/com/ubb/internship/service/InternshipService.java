@@ -2,6 +2,7 @@ package com.ubb.internship.service;
 
 import com.ubb.internship.dto.InternshipDto;
 import com.ubb.internship.dto.InternshipSearchDto;
+import com.ubb.internship.dto.request.InternshipRequestDto;
 import com.ubb.internship.mapper.InternshipMapper;
 import com.ubb.internship.model.Internship;
 import com.ubb.internship.model.Company;
@@ -29,9 +30,23 @@ public class InternshipService {
     private final InternshipMapper internshipMapper;
 
 
-    public Page<InternshipDto> getAllInternships(InternshipSearchDto searchDTO, Pageable pageable) {
-        Specification<Internship> spec = buildSearchSpecification(searchDTO);
-        Page<Internship> internshipsPage = internshipRepository.findAll(spec, pageable);
+    public Page<InternshipDto> getAllInternships(InternshipSearchDto searchDTO, Integer offset, Integer limit) {
+        Page<Internship> internshipsPage;
+        if (offset != null && limit != null && searchDTO != null) {
+            Specification<Internship> spec = buildSearchSpecification(searchDTO);
+            Pageable pageable = PageRequest.of(offset, limit);
+            internshipsPage = internshipRepository.findAll(spec, pageable);
+        } else if (offset != null && limit != null) {
+            Pageable pageable = PageRequest.of(offset, limit);
+            internshipsPage = internshipRepository.findAll(pageable);
+        } else if (searchDTO != null) {
+            Specification<Internship> spec = buildSearchSpecification(searchDTO);
+            List<Internship> internshipList = internshipRepository.findAll(spec);
+            internshipsPage = new PageImpl<>(internshipList);
+        } else {
+            List<Internship> internshipList = internshipRepository.findAll();
+            internshipsPage = new PageImpl<>(internshipList);
+        }
 
         return internshipsPage.map(internshipMapper::mapToDto);
     }
@@ -74,18 +89,25 @@ public class InternshipService {
         };
     }
 
+    public InternshipDto getInternshipById(Long id) {
+        return internshipRepository.findById(id)
+                .map(internshipMapper::mapToDto)
+                .orElseThrow(() -> new EntityNotFoundException("Internship not found with ID: " + id));
+    }
+
     @Transactional
-    public InternshipDto addInternship(InternshipDto internshipDTO) {
+    public InternshipDto addInternship(InternshipRequestDto internshipDTO) {
         Company company = companyRepository.findById(internshipDTO.getCompanyId())
                 .orElseThrow(() -> new EntityNotFoundException("Company not found with ID: " + internshipDTO.getCompanyId()));
 
-        Internship internship = internshipMapper.mapFromDtoToModel(internshipDTO);  // Convert DTO to Model using Mapper
+        Internship internship = internshipMapper.mapFromRequestDtoToModel(internshipDTO);  // Convert DTO to Model using Mapper
         internship.setCompany(company);
         internship.setDateAdded(new java.util.Date());
 
         Internship savedInternship = internshipRepository.save(internship);
         return internshipMapper.mapToDto(savedInternship);  // Return DTO
     }
+
     public void deleteInternship(Long id) {
         if (!internshipRepository.existsById(id)) {
             throw new EntityNotFoundException("Internship not found with ID: " + id);
@@ -94,7 +116,7 @@ public class InternshipService {
     }
 
     @Transactional
-    public InternshipDto updateInternship(Long id, InternshipDto internshipDTO) {
+    public InternshipDto updateInternship(Long id, InternshipRequestDto internshipDTO) {
         Internship internship = internshipRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Internship not found with ID: " + id));
 

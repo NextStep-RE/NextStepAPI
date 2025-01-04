@@ -1,6 +1,7 @@
 package com.ubb.internship.mapper;
 
 import com.ubb.internship.dto.InternshipDto;
+import com.ubb.internship.dto.request.InternshipRequestDto;
 import com.ubb.internship.model.Internship;
 import org.mapstruct.Mapper;
 
@@ -8,5 +9,5 @@ import org.mapstruct.Mapper;
 public interface InternshipMapper {
 
     InternshipDto mapToDto(Internship internship);
-    Internship mapFromDtoToModel(InternshipDto internshipDto);
+    Internship mapFromRequestDtoToModel(InternshipRequestDto internshipDto);
 }

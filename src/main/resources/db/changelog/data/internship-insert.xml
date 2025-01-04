@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro
+        http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+    <changeSet id="insert-internship" author="andrey100f">
+        <insert tableName="internships">
+            <column name="title" value="Software Development Intern"/>
+            <column name="company_id" value="1"/>
+            <column name="description" value="Work on developing web applications."/>
+            <column name="experience" value="Beginner"/>
+            <column name="location" value="Cluj-Napoca"/>
+            <column name="start_date" value="2025-02-01" />
+            <column name="end_date" value="2025-06-30" />
+            <column name="application_deadline" value="2025-01-20" />
+        </insert>
+
+        <insert tableName="internships">
+            <column name="title" value="Data Science Intern" />
+            <column name="company_id" value="2" />
+            <column name="description" value="Analyze data to uncover insights." />
+            <column name="experience" value="Intermediate" />
+            <column name="location" value="Bucharest" />
+            <column name="start_date" value="2025-03-01" />
+            <column name="end_date" value="2025-08-31" />
+            <column name="application_deadline" value="2025-02-15" />
+        </insert>
+
+        <insert tableName="internships">
+            <column name="title" value="Mobile Development Intern" />
+            <column name="company_id" value="3" />
+            <column name="description" value="Build mobile apps using Flutter." />
+            <column name="experience" value="Beginner" />
+            <column name="location" value="Timisoara" />
+            <column name="start_date" value="2025-04-01" />
+            <column name="end_date" value="2025-09-30" />
+            <column name="application_deadline" value="2025-03-10" />
+        </insert>
+
+        <insert tableName="internships">
+            <column name="title" value="Game Development Intern" />
+            <column name="company_id" value="4" />
+            <column name="description" value="Work on game mechanics and design." />
+            <column name="experience" value="Intermediate" />
+            <column name="location" value="Iasi" />
+            <column name="start_date" value="2025-05-01" />
+            <column name="end_date" value="2025-10-31" />
+            <column name="application_deadline" value="2025-04-20" />
+        </insert>
+
+        <insert tableName="internships">
+            <column name="title" value="AI Research Intern" />
+            <column name="company_id" value="5" />
+            <column name="description" value="Develop and train machine learning models." />
+            <column name="experience" value="Advanced" />
+            <column name="location" value="Cluj-Napoca" />
+            <column name="start_date" value="2025-06-01" />
+            <column name="end_date" value="2025-11-30" />
+            <column name="application_deadline" value="2025-05-15" />
+        </insert>
+
+        <insert tableName="internships">
+            <column name="title" value="Frontend Development Intern" />
+            <column name="company_id" value="6" />
+            <column name="description" value="Create modern, responsive UI components." />
+            <column name="experience" value="Beginner" />
+            <column name="location" value="Bucharest" />
+            <column name="start_date" value="2025-02-15" />
+            <column name="end_date" value="2025-07-15" />
+            <column name="application_deadline" value="2025-01-31" />
+        </insert>
+
+        <insert tableName="internships">
+            <column name="title" value="Backend Development Intern" />
+            <column name="company_id" value="7" />
+            <column name="description" value="Work with APIs and databases." />
+            <column name="experience" value="Intermediate" />
+            <column name="location" value="Brasov" />
+            <column name="start_date" value="2025-03-15" />
+            <column name="end_date" value="2025-08-15" />
+            <column name="application_deadline" value="2025-02-28" />
+        </insert>
+
+        <insert tableName="internships">
+            <column name="title" value="Cybersecurity Intern" />
+            <column name="company_id" value="8" />
+            <column name="description" value="Learn to secure systems and applications." />
+            <column name="experience" value="Advanced" />
+            <column name="location" value="Cluj-Napoca" />
+            <column name="start_date" value="2025-04-15" />
+            <column name="end_date" value="2025-09-15" />
+            <column name="application_deadline" value="2025-03-31" />
+        </insert>
+
+        <insert tableName="internships">
+            <column name="title" value="Cloud Computing Intern" />
+            <column name="company_id" value="9" />
+            <column name="description" value="Develop scalable cloud-based applications." />
+            <column name="experience" value="Intermediate" />
+            <column name="location" value="Timisoara" />
+            <column name="start_date" value="2025-05-15" />
+            <column name="end_date" value="2025-10-15" />
+            <column name="application_deadline" value="2025-04-30" />
+        </insert>
+
+        <insert tableName="internships">
+            <column name="title" value="DevOps Intern" />
+            <column name="company_id" value="10" />
+            <column name="description" value="Automate deployment and infrastructure tasks." />
+            <column name="experience" value="Advanced" />
+            <column name="location" value="Bucharest" />
+            <column name="start_date" value="2025-06-15" />
+            <column name="end_date" value="2025-11-15" />
+            <column name="application_deadline" value="2025-05-31" />
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
