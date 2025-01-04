@@ -4,7 +4,7 @@ import com.ubb.internship.dto.UserDto;
 import com.ubb.internship.dto.request.UserRequestDto;
 import com.ubb.internship.mapper.UserMapper;
 import com.ubb.internship.model.User;
-import com.ubb.internship.reqpository.UserRepository;
+import com.ubb.internship.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
