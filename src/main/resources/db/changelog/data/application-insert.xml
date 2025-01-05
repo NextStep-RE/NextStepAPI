@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro
+        http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+    <changeSet id="insert-application" author="andrey100f">
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-02" />
+            <column name="application_status" value="PENDING" />
+            <column name="user_id" value="1" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-03" />
+            <column name="application_status" value="CV_IN_REVIEW" />
+            <column name="user_id" value="1" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-04" />
+            <column name="application_status" value="UPCOMING_INTERVIEW" />
+            <column name="user_id" value="1" />
+            <column name="interview_date" value="2025-01-10" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-05" />
+            <column name="application_status" value="ACCEPTED" />
+            <column name="user_id" value="1" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-06" />
+            <column name="application_status" value="PENDING" />
+            <column name="user_id" value="2" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-07" />
+            <column name="application_status" value="CV_IN_REVIEW" />
+            <column name="user_id" value="2" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-08" />
+            <column name="application_status" value="UPCOMING_INTERVIEW" />
+            <column name="user_id" value="3" />
+            <column name="interview_date" value="2025-01-15" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-09" />
+            <column name="application_status" value="ACCEPTED" />
+            <column name="user_id" value="3" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-10" />
+            <column name="application_status" value="PENDING" />
+            <column name="user_id" value="4" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-11" />
+            <column name="application_status" value="CV_IN_REVIEW" />
+            <column name="user_id" value="4" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-12" />
+            <column name="application_status" value="PENDING" />
+            <column name="user_id" value="5" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-13" />
+            <column name="application_status" value="UPCOMING_INTERVIEW" />
+            <column name="user_id" value="4" />
+            <column name="interview_date" value="2025-01-20" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-14" />
+            <column name="application_status" value="ACCEPTED" />
+            <column name="user_id" value="6" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-15" />
+            <column name="application_status" value="CV_IN_REVIEW" />
+            <column name="user_id" value="6" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-16" />
+            <column name="application_status" value="UPCOMING_INTERVIEW" />
+            <column name="user_id" value="7" />
+            <column name="interview_date" value="2025-01-25" />
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

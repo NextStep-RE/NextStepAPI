@@ -5,4 +5,5 @@
     <include file="db/changelog/init/internship-create.xml" />
     <include file="db/changelog/init/internship-requirement-create.xml" />
     <include file="db/changelog/init/company-create.xml" />
+    <include file="db/changelog/init/application-create.xml" />
 </databaseChangeLog>

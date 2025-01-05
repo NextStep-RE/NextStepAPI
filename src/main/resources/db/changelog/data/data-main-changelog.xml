@@ -5,4 +5,5 @@
     <include file="db/changelog/data/internship-insert.xml" />
     <include file="db/changelog/data/internship-requirement-insert.xml" />
     <include file="db/changelog/data/company-insert.xml" />
+    <include file="db/changelog/data/application-insert.xml" />
 </databaseChangeLog>
