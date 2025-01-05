@@ -11,7 +11,7 @@ import java.util.List;
 public class InternshipDto {
     private Long id;
     private String title;
-    private Long companyId;
+    private CompanyDto company;
     private String description;
     private String experience;
     private String location;
