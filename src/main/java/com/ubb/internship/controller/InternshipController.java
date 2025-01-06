@@ -1,6 +1,7 @@
 package com.ubb.internship.controller;
 
 import com.ubb.internship.dto.InternshipDto;
+import com.ubb.internship.dto.InternshipListDto;
 import com.ubb.internship.dto.InternshipSearchDto;
 import com.ubb.internship.dto.request.InternshipRequestDto;
 import com.ubb.internship.service.InternshipService;
@@ -20,11 +21,10 @@ public class InternshipController {
     private final InternshipService internshipService;
 
     @GetMapping
-    public ResponseEntity<List<InternshipDto>> getAllInternships(@RequestParam(required = false) Integer offset,
-                                                                 @RequestParam(required = false) Integer limit,
-                                                                 @RequestBody(required = false) InternshipSearchDto searchDTO) {
-        List<InternshipDto> internships = internshipService.getAllInternships(searchDTO, offset, limit).getContent();
-        return ResponseEntity.ok(internships);
+    public ResponseEntity<InternshipListDto> getAllInternships(@RequestParam(required = false) Integer offset,
+                                                               @RequestParam(required = false) Integer limit,
+                                                               @RequestBody(required = false) InternshipSearchDto searchDTO) {
+        return ResponseEntity.ok(internshipService.getAllInternships(searchDTO, offset, limit));
     }
 
     @SneakyThrows

@@ -19,6 +19,7 @@ public class InternshipDto {
     private String location;
     private Date startDate;
     private Date endDate;
+    private Date dateAdded;
     private Date applicationDeadline;
     private List<String> requirements;
 

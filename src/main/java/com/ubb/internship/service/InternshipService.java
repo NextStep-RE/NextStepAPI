@@ -1,6 +1,7 @@
 package com.ubb.internship.service;
 
 import com.ubb.internship.dto.InternshipDto;
+import com.ubb.internship.dto.InternshipListDto;
 import com.ubb.internship.dto.InternshipSearchDto;
 import com.ubb.internship.dto.request.InternshipRequestDto;
 import com.ubb.internship.mapper.InternshipMapper;
@@ -24,13 +25,10 @@ import java.util.List;
 public class InternshipService {
 
     private final InternshipRepository internshipRepository;
-
     private final CompanyRepository companyRepository;
-
     private final InternshipMapper internshipMapper;
 
-
-    public Page<InternshipDto> getAllInternships(InternshipSearchDto searchDTO, Integer offset, Integer limit) {
+    public InternshipListDto getAllInternships(InternshipSearchDto searchDTO, Integer offset, Integer limit) {
         Page<Internship> internshipsPage;
         if (offset != null && limit != null && searchDTO != null) {
             Specification<Internship> spec = buildSearchSpecification(searchDTO);
@@ -48,8 +46,11 @@ public class InternshipService {
             internshipsPage = new PageImpl<>(internshipList);
         }
 
-        List<InternshipDto> result = attachCompanyDetailsToInternships(internshipsPage.getContent());
-        return new PageImpl<>(result);
+        List<InternshipDto> internships = attachCompanyDetailsToInternships(internshipsPage.getContent());
+        InternshipListDto internshipListDto = new InternshipListDto();
+        internshipListDto.setInternships(internships);
+        internshipListDto.setTotalNumber(internships.size());
+        return internshipListDto;
     }
 
     public InternshipDto getInternshipById(Long id) {
