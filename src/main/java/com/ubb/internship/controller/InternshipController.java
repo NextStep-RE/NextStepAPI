@@ -7,10 +7,12 @@ import com.ubb.internship.dto.request.InternshipRequestDto;
 import com.ubb.internship.service.InternshipService;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -23,8 +25,27 @@ public class InternshipController {
     @GetMapping
     public ResponseEntity<InternshipListDto> getAllInternships(@RequestParam(required = false) Integer offset,
                                                                @RequestParam(required = false) Integer limit,
-                                                               @RequestBody(required = false) InternshipSearchDto searchDTO) {
-        return ResponseEntity.ok(internshipService.getAllInternships(searchDTO, offset, limit));
+                                                               @RequestParam(required = false) String title,
+                                                               @RequestParam(required = false) String companyName,
+                                                               @RequestParam(required = false) String location,
+                                                               @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) Date startDate,
+                                                               @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) Date endDate,
+                                                               @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) Date applicationDeadline,
+                                                               @RequestParam(required = false) List<String> requirements,
+                                                               @RequestParam(required = false) String sortBy,
+                                                               @RequestParam(required = false) Boolean ascending) {
+        InternshipSearchDto searchDto = new InternshipSearchDto();
+        searchDto.setTitle(title);
+        searchDto.setCompanyName(companyName);
+        searchDto.setLocation(location);
+        searchDto.setStartDate(startDate);
+        searchDto.setEndDate(endDate);
+        searchDto.setApplicationDeadline(applicationDeadline);
+        searchDto.setRequirements(requirements);
+        searchDto.setSortBy(sortBy);
+        searchDto.setAscending(ascending != null && ascending);
+
+        return ResponseEntity.ok(internshipService.getAllInternships(searchDto, offset, limit));
     }
 
     @SneakyThrows
