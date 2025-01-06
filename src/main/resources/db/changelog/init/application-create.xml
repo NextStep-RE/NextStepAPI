@@ -19,7 +19,7 @@
             <column name="date_applied" type="DATE" >
                 <constraints nullable="true" />
             </column>
-            <column name="application_statusgit" type="VARCHAR(255)">
+            <column name="application_status" type="VARCHAR(255)">
                 <constraints nullable="true" />
             </column>
             <column name="interview_date" type="DATE">
