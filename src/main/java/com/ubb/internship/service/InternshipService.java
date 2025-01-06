@@ -48,45 +48,8 @@ public class InternshipService {
             internshipsPage = new PageImpl<>(internshipList);
         }
 
-        return internshipsPage.map(internshipMapper::mapToDto);
-    }
-
-    private Specification<Internship> buildSearchSpecification(InternshipSearchDto searchDTO) {
-        return (root, query, criteriaBuilder) -> {
-            List<Predicate> predicates = new ArrayList<>();
-
-            if (searchDTO.getTitle() != null) {
-                predicates.add(criteriaBuilder.like(root.get("title"), "%" + searchDTO.getTitle() + "%"));
-            }
-            if (searchDTO.getCompanyName() != null) {
-                predicates.add(criteriaBuilder.like(root.get("company").get("companyName"), "%" + searchDTO.getCompanyName() + "%"));
-            }
-            if (searchDTO.getLocation() != null) {
-                predicates.add(criteriaBuilder.like(root.get("location"), "%" + searchDTO.getLocation() + "%"));
-            }
-            if (searchDTO.getStartDate() != null) {
-                predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("startDate"), searchDTO.getStartDate()));
-            }
-            if (searchDTO.getEndDate() != null) {
-                predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("endDate"), searchDTO.getEndDate()));
-            }
-            if (searchDTO.getApplicationDeadline() != null) {
-                predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("applicationDeadline"), searchDTO.getApplicationDeadline()));
-            }
-            if (searchDTO.getRequirements() != null && !searchDTO.getRequirements().isEmpty()) {
-                predicates.add(root.get("requirements").in(searchDTO.getRequirements()));
-            }
-
-            if (searchDTO.getSortBy() != null) {
-                if (searchDTO.isAscending()) {
-                    query.orderBy(criteriaBuilder.asc(root.get(searchDTO.getSortBy())));
-                } else {
-                    query.orderBy(criteriaBuilder.desc(root.get(searchDTO.getSortBy())));
-                }
-            }
-
-            return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
-        };
+        List<InternshipDto> result = attachCompanyDetailsToInternships(internshipsPage.getContent());
+        return new PageImpl<>(result);
     }
 
     public InternshipDto getInternshipById(Long id) {
@@ -136,4 +99,57 @@ public class InternshipService {
         Internship updatedInternship = internshipRepository.save(internship);
         return internshipMapper.mapToDto(updatedInternship);
     }
+
+    private List<InternshipDto> attachCompanyDetailsToInternships(List<Internship> internships) {
+        List<InternshipDto> result = new ArrayList<>();
+        for (Internship internship : internships) {
+            InternshipDto internshipDto = internshipMapper.mapToDto(internship);
+            Company company = internship.getCompany();
+            internshipDto.setCompanyName(company.getCompanyName());
+            internshipDto.setCompanyLogoUrl(company.getLogoUrl());
+            internshipDto.setCompanyWebsite(company.getWebsite());
+            result.add(internshipDto);
+        }
+
+        return result;
+    }
+
+    private Specification<Internship> buildSearchSpecification(InternshipSearchDto searchDTO) {
+        return (root, query, criteriaBuilder) -> {
+            List<Predicate> predicates = new ArrayList<>();
+
+            if (searchDTO.getTitle() != null) {
+                predicates.add(criteriaBuilder.like(root.get("title"), "%" + searchDTO.getTitle() + "%"));
+            }
+            if (searchDTO.getCompanyName() != null) {
+                predicates.add(criteriaBuilder.like(root.get("company").get("companyName"), "%" + searchDTO.getCompanyName() + "%"));
+            }
+            if (searchDTO.getLocation() != null) {
+                predicates.add(criteriaBuilder.like(root.get("location"), "%" + searchDTO.getLocation() + "%"));
+            }
+            if (searchDTO.getStartDate() != null) {
+                predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("startDate"), searchDTO.getStartDate()));
+            }
+            if (searchDTO.getEndDate() != null) {
+                predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("endDate"), searchDTO.getEndDate()));
+            }
+            if (searchDTO.getApplicationDeadline() != null) {
+                predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("applicationDeadline"), searchDTO.getApplicationDeadline()));
+            }
+            if (searchDTO.getRequirements() != null && !searchDTO.getRequirements().isEmpty()) {
+                predicates.add(root.get("requirements").in(searchDTO.getRequirements()));
+            }
+
+            if (searchDTO.getSortBy() != null) {
+                if (searchDTO.isAscending()) {
+                    query.orderBy(criteriaBuilder.asc(root.get(searchDTO.getSortBy())));
+                } else {
+                    query.orderBy(criteriaBuilder.desc(root.get(searchDTO.getSortBy())));
+                }
+            }
+
+            return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
+        };
+    }
+
 }

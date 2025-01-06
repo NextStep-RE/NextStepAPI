@@ -11,7 +11,13 @@ import java.util.List;
 public class InternshipDto {
     private Long id;
     private String title;
+<<<<<<< Updated upstream
     private Long companyId;
+=======
+    private String companyName;
+    private String companyLogoUrl;
+    private String companyWebsite;
+>>>>>>> Stashed changes
     private String description;
     private String experience;
     private String location;
