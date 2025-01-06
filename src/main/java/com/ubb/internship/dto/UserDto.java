@@ -3,6 +3,8 @@ package com.ubb.internship.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 public class UserDto {
@@ -13,5 +15,6 @@ public class UserDto {
     private String email;
     private String password;
     private String bio;
+    private List<ApplicationDto> applications;
 
 }

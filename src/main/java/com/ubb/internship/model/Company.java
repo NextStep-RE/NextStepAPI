@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Table(name = "companies")
 @Entity
@@ -34,6 +35,9 @@ public class Company {
     @Column(name = "date_joined", updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateJoined;
+
+    @OneToMany(mappedBy = "company")
+    List<Internship> internships;
 
     @Override
     public String toString() {

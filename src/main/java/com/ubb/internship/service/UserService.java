@@ -18,6 +18,7 @@ public class UserService {
     private final UserMapper userMapper;
 
     public List<UserDto> getAllUsers() {
+        List<User> users = userRepository.findAll();
         return userRepository.findAll().stream()
                 .map(userMapper::mapToDto)
                 .toList();

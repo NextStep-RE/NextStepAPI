@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Table(name = "users")
 @Entity
 @Getter
@@ -28,6 +30,9 @@ public class User {
 
     @Column(name = "bio")
     private String bio;
+
+    @OneToMany(mappedBy = "user")
+    private List<Application> applications;
 
     @Override
     public String toString() {
