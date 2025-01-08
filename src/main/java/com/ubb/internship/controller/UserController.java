@@ -1,5 +1,6 @@
 package com.ubb.internship.controller;
 
+import com.ubb.internship.dto.LoginDto;
 import com.ubb.internship.dto.UserDto;
 import com.ubb.internship.dto.request.UserRequestDto;
 import com.ubb.internship.service.UserService;
@@ -35,4 +36,11 @@ public class UserController {
         UserDto savedUser = userService.createUser(userDto);
         return ResponseEntity.created(new URI("/api/users/" + savedUser.getId())).build();
     }
+
+    @SneakyThrows
+    @PostMapping("/login")
+    public ResponseEntity<UserDto> loginUser(@RequestBody LoginDto loginDto) {
+        return ResponseEntity.ok(userService.getUserByEmailAndPassword(loginDto));
+    }
+
 }
