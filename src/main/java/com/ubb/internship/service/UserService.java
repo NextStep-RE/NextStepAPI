@@ -1,10 +1,12 @@
 package com.ubb.internship.service;
 
+import com.ubb.internship.dto.LoginDto;
 import com.ubb.internship.dto.UserDto;
 import com.ubb.internship.dto.request.UserRequestDto;
 import com.ubb.internship.mapper.UserMapper;
 import com.ubb.internship.model.User;
 import com.ubb.internship.repository.UserRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +20,6 @@ public class UserService {
     private final UserMapper userMapper;
 
     public List<UserDto> getAllUsers() {
-        List<User> users = userRepository.findAll();
         return userRepository.findAll().stream()
                 .map(userMapper::mapToDto)
                 .toList();
@@ -30,10 +31,10 @@ public class UserService {
                 .orElse(null);
     }
 
-    public UserDto getUserByEmailAndPassword(String email, String password) {
-        return userRepository.findByEmailAndPassword(email, password)
+    public UserDto getUserByEmailAndPassword(LoginDto loginDto) {
+        return userRepository.findByEmailAndPassword(loginDto.getEmail(), loginDto.getPassword())
                 .map(userMapper::mapToDto)
-                .orElse(null);
+                .orElseThrow(() -> new EntityNotFoundException("User not found"));
     }
 
     public UserDto createUser(UserRequestDto userDto) {
