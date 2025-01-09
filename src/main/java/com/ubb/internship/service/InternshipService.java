@@ -30,6 +30,8 @@ public class InternshipService {
 
     public InternshipListDto getAllInternships(InternshipSearchDto searchDTO, Integer offset, Integer limit) {
         Page<Internship> internshipsPage;
+        InternshipListDto internshipListDto = new InternshipListDto();
+        internshipListDto.setTotalNumber(internshipRepository.findAll().size());
         if (offset != null && limit != null && searchDTO != null) {
             Specification<Internship> spec = buildSearchSpecification(searchDTO);
             Pageable pageable = PageRequest.of(offset, limit);
@@ -47,9 +49,7 @@ public class InternshipService {
         }
 
         List<InternshipDto> internships = attachCompanyDetailsToInternships(internshipsPage.getContent());
-        InternshipListDto internshipListDto = new InternshipListDto();
         internshipListDto.setInternships(internships);
-        internshipListDto.setTotalNumber(internships.size());
         return internshipListDto;
     }
 
