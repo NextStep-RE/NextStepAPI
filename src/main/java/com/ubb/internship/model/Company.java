@@ -39,6 +39,9 @@ public class Company {
     @OneToMany(mappedBy = "company")
     List<Internship> internships;
 
+    @OneToMany(mappedBy = "company")
+    List<Experience> experiences;
+
     @Override
     public String toString() {
         return "Company{" +

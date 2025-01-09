@@ -56,6 +56,9 @@ public class Internship {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateAdded;
 
+    @OneToMany(mappedBy = "internship")
+    private List<Application> applications;
+
     @Override
     public String toString() {
         return "Internship{" +
