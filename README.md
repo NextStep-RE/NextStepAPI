@@ -7,12 +7,16 @@ This repository contains the backend implementation for the ***Student Internshi
 ## <span style="color: #4285F4"> Getting Started
 
 1. **Backend (Java with Spring Boot)**:
-    - Ensure you have Java and Maven installed.
-    - Clone the repository: `git clone https://github.com/NextStep-RE/NextStepAPI.git`
-    - Run the application: `mvn spring-boot:run`
-2. **Database (MySQL):**
-    - Configure the database connection in the Spring Boot application configuration file.
+   - Ensure you have Java and Maven installed.
+   - Clone the repository: `git clone https://github.com/NextStep-RE/NextStepAPI.git`
+3. **Database (MySQL):**
+   - Navigate to the `docker` folder in the project.
+   - Run the following command to start the MySQL database container using Docker Compose `docker compose -f internship-db.yaml up -d`
+   - The database schema and initial data are managed using **Liquibase**, which automatically applies changesets on application startup.
 
 ## <span style="color: #4285F4"> Technologies Used
 - **<i>Java with Spring Boot</i>**: The backend of the application is developed in Java, using the Spring Boot framework to ensure rapid and efficient development.
 - **<i>MySQL</i>**: The application's database is managed by MySQL, ensuring efficient data storage and access.
+- **<i>Docker</i>**: Used to create and manage the MySQL database container, ensuring consistency across environments.
+- **<i>Liquibase</i>**: A database migration tool used to manage schema changes and version control for the database.
+
