@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro
+        http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+    <changeSet id="insert-education" author="andrey100f">
+        <insert tableName="educations">
+            <column name="degree" value="BACHELOR" />
+            <column name="major" value="Computer Science" />
+            <column name="university" value="University of Bucharest" />
+            <column name="start_date" value="2020-10-01" />
+            <column name="end_date" value="2024-07-01" />
+            <column name="user_id" value="1" />
+        </insert>
+
+        <insert tableName="educations">
+            <column name="degree" value="MASTER" />
+            <column name="major" value="Data Science" />
+            <column name="university" value="Politehnica University of Bucharest" />
+            <column name="start_date" value="2024-10-01" />
+            <column name="end_date" value="2026-07-01" />
+            <column name="user_id" value="2" />
+        </insert>
+
+        <insert tableName="educations">
+            <column name="degree" value="BACHELOR" />
+            <column name="major" value="Information Technology" />
+            <column name="university" value="Babes-Bolyai University" />
+            <column name="start_date" value="2019-10-01" />
+            <column name="end_date" value="2023-07-01" />
+            <column name="user_id" value="3" />
+        </insert>
+
+        <insert tableName="educations">
+            <column name="degree" value="PHD" />
+            <column name="major" value="Artificial Intelligence" />
+            <column name="university" value="University of Timisoara" />
+            <column name="start_date" value="2021-10-01" />
+            <column name="end_date" value="2025-07-01" />
+            <column name="user_id" value="4" />
+        </insert>
+
+        <insert tableName="educations">
+            <column name="degree" value="BACHELOR" />
+            <column name="major" value="Cybersecurity" />
+            <column name="university" value="University of Craiova" />
+            <column name="start_date" value="2022-10-01" />
+            <column name="end_date" value="2026-07-01" />
+            <column name="user_id" value="5" />
+        </insert>
+
+        <insert tableName="educations">
+            <column name="degree" value="BACHELOR" />
+            <column name="major" value="Software Engineering" />
+            <column name="university" value="Transilvania University of Brasov" />
+            <column name="start_date" value="2020-10-01" />
+            <column name="end_date" value="2024-07-01" />
+            <column name="user_id" value="6" />
+        </insert>
+
+        <insert tableName="educations">
+            <column name="degree" value="MASTER" />
+            <column name="major" value="Cloud Computing" />
+            <column name="university" value="University of Oradea" />
+            <column name="start_date" value="2023-10-01" />
+            <column name="end_date" value="2025-07-01" />
+            <column name="user_id" value="7" />
+        </insert>
+
+        <insert tableName="educations">
+            <column name="degree" value="BACHELOR" />
+            <column name="major" value="Game Development" />
+            <column name="university" value="Technical University of Cluj-Napoca" />
+            <column name="start_date" value="2021-10-01" />
+            <column name="end_date" value="2025-07-01" />
+            <column name="user_id" value="8" />
+        </insert>
+
+        <insert tableName="educations">
+            <column name="degree" value="PHD" />
+            <column name="major" value="Machine Learning" />
+            <column name="university" value="Alexandru Ioan Cuza University of Iasi" />
+            <column name="start_date" value="2022-10-01" />
+            <column name="end_date" value="2026-07-01" />
+            <column name="user_id" value="9" />
+        </insert>
+
+        <insert tableName="educations">
+            <column name="degree" value="MASTER" />
+            <column name="major" value="DevOps" />
+            <column name="university" value="University of Galati" />
+            <column name="start_date" value="2023-10-01" />
+            <column name="end_date" value="2025-07-01" />
+            <column name="user_id" value="10" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,5 +1,6 @@
 package com.ubb.internship.service;
 
+import com.ubb.internship.dto.ExperienceDto;
 import com.ubb.internship.dto.InternshipDto;
 import com.ubb.internship.dto.LoginDto;
 import com.ubb.internship.dto.UserDto;
@@ -22,15 +23,17 @@ public class UserService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
     private final InternshipService internshipService;
+    private final ExperienceService experienceService;
 
     public List<UserDto> getAllUsers() {
         List<User> users = userRepository.findAll();
         List<UserDto> userDtos = new ArrayList<>();
 
-        for (User user : users) {
+        users.forEach(user -> {
             UserDto userDto = attachCompanyDetailsToInternshipApplications(user);
+            attachCompanyDetailsToSpecificInternshipApplications(user, userDto);
             userDtos.add(userDto);
-        }
+        });
 
         return userDtos;
     }
@@ -38,13 +41,17 @@ public class UserService {
     public UserDto getUserById(String id) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("User not found"));
-        return attachCompanyDetailsToInternshipApplications(user);
+        UserDto userDto = attachCompanyDetailsToInternshipApplications(user);
+        attachCompanyDetailsToSpecificInternshipApplications(user, userDto);
+        return userDto;
     }
 
     public UserDto getUserByEmailAndPassword(LoginDto loginDto) {
         User user = userRepository.findByEmailAndPassword(loginDto.getEmail(), loginDto.getPassword())
                 .orElseThrow(() -> new EntityNotFoundException("User not found"));
-        return attachCompanyDetailsToInternshipApplications(user);
+        UserDto userDto = attachCompanyDetailsToInternshipApplications(user);
+        attachCompanyDetailsToSpecificInternshipApplications(user, userDto);
+        return userDto;
     }
 
     public UserDto createUser(UserRequestDto userDto) {
@@ -61,6 +68,16 @@ public class UserService {
         }
 
         return userDto;
+    }
+
+    private void attachCompanyDetailsToSpecificInternshipApplications(User user, UserDto userDto) {
+        List<ExperienceDto> experienceDtos = new ArrayList<>();
+        user.getExperiences().forEach(experience -> {
+            ExperienceDto experienceDto = experienceService.attachCompanyDetailsToSpecificExperience(experience);
+            experienceDtos.add(experienceDto);
+        });
+
+        userDto.setExperiences(experienceDtos);
     }
 
 }
