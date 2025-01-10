@@ -16,5 +16,7 @@ public class UserDto {
     private String password;
     private String bio;
     private List<ApplicationDto> applications;
+    private List<ExperienceDto> experiences;
+    private List<EducationDto> educations;
 
 }

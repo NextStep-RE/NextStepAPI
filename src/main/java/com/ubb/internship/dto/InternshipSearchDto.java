@@ -8,6 +8,7 @@ import java.util.List;
 @Getter
 @Setter
 public class InternshipSearchDto {
+
     private String title;
     private String companyName;
     private String location;

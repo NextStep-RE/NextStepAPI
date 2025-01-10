@@ -9,6 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 public class InternshipDto {
+
     private Long id;
     private String title;
     private String companyName;

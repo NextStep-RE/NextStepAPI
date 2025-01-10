@@ -8,6 +8,8 @@ import java.util.List;
 @Getter
 @Setter
 public class InternshipListDto {
+
     private Integer totalNumber;
     private List<InternshipDto> internships;
+
 }
