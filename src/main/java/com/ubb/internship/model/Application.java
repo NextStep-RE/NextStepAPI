@@ -31,4 +31,8 @@ public class Application {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "internship_id")
+    private Internship internship;
+
 }

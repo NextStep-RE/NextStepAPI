@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro
+        http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+    <changeSet id="insert-experience" author="andrey100f">
+        <insert tableName="experiences">
+            <column name="role" value="Software Developer" />
+            <column name="start_date" value="2023-01-01" />
+            <column name="end_date" value="2023-12-31" />
+            <column name="company_id" value="1" />
+            <column name="user_id" value="1" />
+            <column name="date_joined" value="2023-01-01" />
+        </insert>
+
+        <insert tableName="experiences">
+            <column name="role" value="Data Analyst" />
+            <column name="start_date" value="2022-03-01" />
+            <column name="end_date" value="2022-12-31" />
+            <column name="company_id" value="2" />
+            <column name="user_id" value="2" />
+            <column name="date_joined" value="2022-03-01" />
+        </insert>
+
+        <insert tableName="experiences">
+            <column name="role" value="Mobile Developer" />
+            <column name="start_date" value="2024-06-01" />
+            <column name="end_date" value="2024-11-30" />
+            <column name="company_id" value="3" />
+            <column name="user_id" value="3" />
+            <column name="date_joined" value="2024-06-01" />
+        </insert>
+
+        <insert tableName="experiences">
+            <column name="role" value="Game Designer" />
+            <column name="start_date" value="2025-01-01" />
+            <column name="end_date" value="2025-06-30" />
+            <column name="company_id" value="4" />
+            <column name="user_id" value="4" />
+            <column name="date_joined" value="2025-01-01" />
+        </insert>
+
+        <insert tableName="experiences">
+            <column name="role" value="AI Researcher" />
+            <column name="start_date" value="2023-05-01" />
+            <column name="end_date" value="2023-11-30" />
+            <column name="company_id" value="5" />
+            <column name="user_id" value="5" />
+            <column name="date_joined" value="2023-05-01" />
+        </insert>
+
+        <insert tableName="experiences">
+            <column name="role" value="Frontend Developer" />
+            <column name="start_date" value="2024-02-15" />
+            <column name="end_date" value="2024-08-15" />
+            <column name="company_id" value="6" />
+            <column name="user_id" value="6" />
+            <column name="date_joined" value="2024-02-15" />
+        </insert>
+
+        <insert tableName="experiences">
+            <column name="role" value="Backend Developer" />
+            <column name="start_date" value="2023-09-01" />
+            <column name="end_date" value="2024-03-01" />
+            <column name="company_id" value="7" />
+            <column name="user_id" value="7" />
+            <column name="date_joined" value="2023-09-01" />
+        </insert>
+
+        <insert tableName="experiences">
+            <column name="role" value="Cybersecurity Specialist" />
+            <column name="start_date" value="2023-07-01" />
+            <column name="end_date" value="2023-12-31" />
+            <column name="company_id" value="8" />
+            <column name="user_id" value="8" />
+            <column name="date_joined" value="2023-07-01" />
+        </insert>
+
+        <insert tableName="experiences">
+            <column name="role" value="Cloud Engineer" />
+            <column name="start_date" value="2022-01-01" />
+            <column name="end_date" value="2022-12-31" />
+            <column name="company_id" value="9" />
+            <column name="user_id" value="9" />
+            <column name="date_joined" value="2022-01-01" />
+        </insert>
+
+        <insert tableName="experiences">
+            <column name="role" value="DevOps Engineer" />
+            <column name="start_date" value="2024-03-01" />
+            <column name="end_date" value="2024-09-30" />
+            <column name="company_id" value="10" />
+            <column name="user_id" value="10" />
+            <column name="date_joined" value="2024-03-01" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>

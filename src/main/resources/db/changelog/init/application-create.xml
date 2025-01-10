@@ -28,6 +28,9 @@
             <column name="user_id" type="INT">
                 <constraints nullable="false" />
             </column>
+            <column name="internship_id" type="INT">
+                <constraints nullable="false" />
+            </column>
         </createTable>
         <addForeignKeyConstraint
                 baseTableName="applications"
@@ -35,6 +38,12 @@
                 referencedTableName="users"
                 referencedColumnNames="id"
                 constraintName="fk_applications_user" />
+        <addForeignKeyConstraint
+                baseTableName="applications"
+                baseColumnNames="internship_id"
+                referencedTableName="internships"
+                referencedColumnNames="id"
+                constraintName="fk_applications_internships" />
     </changeSet>
 
 </databaseChangeLog>

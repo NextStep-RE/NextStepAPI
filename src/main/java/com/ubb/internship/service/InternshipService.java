@@ -101,18 +101,23 @@ public class InternshipService {
         return internshipMapper.mapToDto(updatedInternship);
     }
 
-    private List<InternshipDto> attachCompanyDetailsToInternships(List<Internship> internships) {
+    public List<InternshipDto> attachCompanyDetailsToInternships(List<Internship> internships) {
         List<InternshipDto> result = new ArrayList<>();
         for (Internship internship : internships) {
-            InternshipDto internshipDto = internshipMapper.mapToDto(internship);
-            Company company = internship.getCompany();
-            internshipDto.setCompanyName(company.getCompanyName());
-            internshipDto.setCompanyLogoUrl(company.getLogoUrl());
-            internshipDto.setCompanyWebsite(company.getWebsite());
+            InternshipDto internshipDto = attachCompanyDetailToSpecificInternship(internship);
             result.add(internshipDto);
         }
 
         return result;
+    }
+
+    public InternshipDto attachCompanyDetailToSpecificInternship(Internship internship) {
+        InternshipDto internshipDto = internshipMapper.mapToDto(internship);
+        Company company = internship.getCompany();
+        internshipDto.setCompanyName(company.getCompanyName());
+        internshipDto.setCompanyLogoUrl(company.getLogoUrl());
+        internshipDto.setCompanyWebsite(company.getWebsite());
+        return internshipDto;
     }
 
     private Specification<Internship> buildSearchSpecification(InternshipSearchDto searchDTO) {

@@ -6,7 +6,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CompanyDto {
+
     private String companyName;
-    private String website;
     private String logoUrl;
+
 }

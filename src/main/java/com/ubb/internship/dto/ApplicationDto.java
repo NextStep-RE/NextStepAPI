@@ -11,5 +11,6 @@ public class ApplicationDto {
     private String dateApplied;
     private String status;
     private String interviewDate;
+    private InternshipDto internship;
 
 }

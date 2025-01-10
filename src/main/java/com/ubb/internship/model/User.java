@@ -34,6 +34,12 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Application> applications;
 
+    @OneToMany(mappedBy = "user")
+    private List<Experience> experiences;
+
+    @OneToMany(mappedBy = "user")
+    private List<Education> educations;
+
     @Override
     public String toString() {
         return "User{" +
