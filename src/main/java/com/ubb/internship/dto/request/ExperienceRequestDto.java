@@ -12,7 +12,7 @@ public class ExperienceRequestDto {
     private String role;
     private Date startDate;
     private Date endDate;
-    private Long companyId;
+    private String companyName;
     private Long userId;
 
 }

@@ -5,8 +5,10 @@ import com.ubb.internship.dto.request.ExperienceRequestDto;
 import com.ubb.internship.mapper.ExperienceMapper;
 import com.ubb.internship.model.Company;
 import com.ubb.internship.model.Experience;
+import com.ubb.internship.model.User;
 import com.ubb.internship.repository.CompanyRepository;
 import com.ubb.internship.repository.ExperienceRepository;
+import com.ubb.internship.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,6 +23,7 @@ public class ExperienceService {
     private final ExperienceRepository experienceRepository;
     private final ExperienceMapper experienceMapper;
     private final CompanyRepository companyRepository;
+    private final UserRepository userRepository;
 
     public List<ExperienceDto> getAllExperiences() {
         List<Experience> experiences = experienceRepository.findAll();
@@ -47,8 +50,17 @@ public class ExperienceService {
     }
 
     public ExperienceDto addExperience(ExperienceRequestDto experienceDto) {
-        Experience experience = experienceRepository.save(experienceMapper.mapFromRequestDtoToModel(experienceDto));
-        return experienceMapper.mapToDto(experience);
+        Company company = companyRepository.findByCompanyName(experienceDto.getCompanyName())
+                .orElseThrow(() -> new EntityNotFoundException("Company not found"));
+        User user = userRepository.findById(experienceDto.getUserId())
+                .orElseThrow(() -> new EntityNotFoundException("User not found"));
+
+        Experience experience = experienceMapper.mapFromRequestDtoToModel(experienceDto);
+        experience.setCompany(company);
+        experience.setUser(user);
+        Experience savedExperience = experienceRepository.save(experience);
+
+        return experienceMapper.mapToDto(savedExperience);
     }
 
     public void deleteExperience(Long experienceId) {

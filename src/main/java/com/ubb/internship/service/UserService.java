@@ -38,7 +38,7 @@ public class UserService {
         return userDtos;
     }
 
-    public UserDto getUserById(String id) {
+    public UserDto getUserById(Long id) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("User not found"));
         UserDto userDto = attachCompanyDetailsToInternshipApplications(user);
