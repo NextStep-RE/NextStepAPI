@@ -13,7 +13,7 @@
 
     <changeSet id="insert-education" author="andrey100f">
         <insert tableName="educations">
-            <column name="degree" value="BACHELOR" />
+            <column name="degree" value="Bachelor" />
             <column name="major" value="Computer Science" />
             <column name="university" value="University of Bucharest" />
             <column name="start_date" value="2020-10-01" />
@@ -22,7 +22,7 @@
         </insert>
 
         <insert tableName="educations">
-            <column name="degree" value="MASTER" />
+            <column name="degree" value="Master" />
             <column name="major" value="Data Science" />
             <column name="university" value="Politehnica University of Bucharest" />
             <column name="start_date" value="2024-10-01" />
@@ -31,7 +31,7 @@
         </insert>
 
         <insert tableName="educations">
-            <column name="degree" value="BACHELOR" />
+            <column name="degree" value="Bachelor" />
             <column name="major" value="Information Technology" />
             <column name="university" value="Babes-Bolyai University" />
             <column name="start_date" value="2019-10-01" />
@@ -40,7 +40,7 @@
         </insert>
 
         <insert tableName="educations">
-            <column name="degree" value="PHD" />
+            <column name="degree" value="PhD" />
             <column name="major" value="Artificial Intelligence" />
             <column name="university" value="University of Timisoara" />
             <column name="start_date" value="2021-10-01" />
@@ -49,7 +49,7 @@
         </insert>
 
         <insert tableName="educations">
-            <column name="degree" value="BACHELOR" />
+            <column name="degree" value="Bachelor" />
             <column name="major" value="Cybersecurity" />
             <column name="university" value="University of Craiova" />
             <column name="start_date" value="2022-10-01" />
@@ -58,7 +58,7 @@
         </insert>
 
         <insert tableName="educations">
-            <column name="degree" value="BACHELOR" />
+            <column name="degree" value="Bachelor" />
             <column name="major" value="Software Engineering" />
             <column name="university" value="Transilvania University of Brasov" />
             <column name="start_date" value="2020-10-01" />
@@ -67,7 +67,7 @@
         </insert>
 
         <insert tableName="educations">
-            <column name="degree" value="MASTER" />
+            <column name="degree" value="Master" />
             <column name="major" value="Cloud Computing" />
             <column name="university" value="University of Oradea" />
             <column name="start_date" value="2023-10-01" />
@@ -76,7 +76,7 @@
         </insert>
 
         <insert tableName="educations">
-            <column name="degree" value="BACHELOR" />
+            <column name="degree" value="Bachelor" />
             <column name="major" value="Game Development" />
             <column name="university" value="Technical University of Cluj-Napoca" />
             <column name="start_date" value="2021-10-01" />
@@ -85,7 +85,7 @@
         </insert>
 
         <insert tableName="educations">
-            <column name="degree" value="PHD" />
+            <column name="degree" value="PhD" />
             <column name="major" value="Machine Learning" />
             <column name="university" value="Alexandru Ioan Cuza University of Iasi" />
             <column name="start_date" value="2022-10-01" />
@@ -94,7 +94,7 @@
         </insert>
 
         <insert tableName="educations">
-            <column name="degree" value="MASTER" />
+            <column name="degree" value="Master" />
             <column name="major" value="DevOps" />
             <column name="university" value="University of Galati" />
             <column name="start_date" value="2023-10-01" />

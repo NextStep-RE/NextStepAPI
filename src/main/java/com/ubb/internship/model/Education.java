@@ -1,6 +1,5 @@
 package com.ubb.internship.model;
 
-import com.ubb.internship.model.enums.DegreeEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,8 +17,7 @@ public class Education {
     private Long id;
 
     @Column(name = "degree")
-    @Enumerated(EnumType.STRING)
-    private DegreeEnum degree;
+    private String degree;
 
     @Column(name = "major")
     private String major;
