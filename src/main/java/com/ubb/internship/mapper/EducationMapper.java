@@ -5,8 +5,6 @@ import com.ubb.internship.dto.request.EducationRequestDto;
 import com.ubb.internship.model.Education;
 import org.mapstruct.Mapper;
 
-import java.util.List;
-
 @Mapper(componentModel = "spring")
 public interface EducationMapper {
 

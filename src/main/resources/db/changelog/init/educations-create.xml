@@ -42,5 +42,4 @@
                 referencedColumnNames="id"
                 constraintName="fk_educations_user" />
     </changeSet>
-
 </databaseChangeLog>
