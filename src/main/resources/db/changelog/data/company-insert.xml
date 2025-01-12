@@ -16,7 +16,7 @@
             <column name="company_name" value="Tech Innovators" />
             <column name="description" value="A leading company in software development and AI solutions." />
             <column name="website" value="https://www.techinnovators.com" />
-            <column name="logo_url" value="https://cdn.techinnovators.com/logo.png" />
+            <column name="logo_url" value="tech-corp.png" />
             <column name="industry" value="Technology" />
             <column name="date_joined" value="2023-01-15" />
         </insert>
@@ -25,7 +25,7 @@
             <column name="company_name" value="Green Energy Solutions" />
             <column name="description" value="Specialized in renewable energy and sustainability projects." />
             <column name="website" value="https://www.greenenergy.com" />
-            <column name="logo_url" value="https://cdn.greenenergy.com/logo.png" />
+            <column name="logo_url" value="green-energy.png" />
             <column name="industry" value="Energy" />
             <column name="date_joined" value="2023-03-20" />
         </insert>
@@ -34,7 +34,7 @@
             <column name="company_name" value="MedicoTech" />
             <column name="description" value="Developing cutting-edge technology for the healthcare industry." />
             <column name="website" value="https://www.medicotech.com" />
-            <column name="logo_url" value="https://cdn.medicotech.com/logo.png" />
+            <column name="logo_url" value="medicotech.png" />
             <column name="industry" value="Healthcare" />
             <column name="date_joined" value="2023-05-10" />
         </insert>
@@ -43,7 +43,7 @@
             <column name="company_name" value="FinTech World" />
             <column name="description" value="A global leader in financial technology and payment solutions." />
             <column name="website" value="https://www.fintechworld.com" />
-            <column name="logo_url" value="https://cdn.fintechworld.com/logo.png" />
+            <column name="logo_url" value="fintech.png" />
             <column name="industry" value="Finance" />
             <column name="date_joined" value="2023-07-01" />
         </insert>
@@ -52,7 +52,7 @@
             <column name="company_name" value="EduNext" />
             <column name="description" value="Revolutionizing education through innovative e-learning platforms." />
             <column name="website" value="https://www.edunext.com" />
-            <column name="logo_url" value="https://cdn.edunext.com/logo.png" />
+            <column name="logo_url" value="edunext.png" />
             <column name="industry" value="Education" />
             <column name="date_joined" value= "2023-09-12" />
         </insert>
@@ -61,7 +61,7 @@
             <column name="company_name" value="AutoDrive Systems" />
             <column name="description" value="Building state-of-the-art autonomous vehicle technologies." />
             <column name="website" value="https://www.autodrive.com" />
-            <column name="logo_url" value="https://cdn.autodrive.com/logo.png" />
+            <column name="logo_url" value="autodrive.png" />
             <column name="industry" value="Automotive" />
             <column name="date_joined" value="2023-02-08" />
         </insert>
@@ -70,7 +70,7 @@
             <column name="company_name" value="Pixel Studios" />
             <column name="description" value="A creative agency specializing in digital marketing and design." />
             <column name="website" value="https://www.pixelstudios.com" />
-            <column name="logo_url" value="https://cdn.pixelstudios.com/logo.png" />
+            <column name="logo_url" value="pixel-studios.png" />
             <column name="industry" value="Marketing" />
             <column name="date_joined" value="2023-06-25" />
         </insert>
@@ -79,7 +79,7 @@
             <column name="company_name" value="Urban Constructors" />
             <column name="description" value="Focused on sustainable and innovative urban construction projects." />
             <column name="website" value="https://www.urbanconstructors.com" />
-            <column name="logo_url" value="https://cdn.urbanconstructors.com/logo.png" />
+            <column name="logo_url" value="urban-constructors.png" />
             <column name="industry" value="Construction" />
             <column name="date_joined" value="2023-04-18" />
         </insert>
@@ -88,7 +88,7 @@
             <column name="company_name" value="BioTech Innovators" />
             <column name="description" value="Creating groundbreaking solutions in biotechnology." />
             <column name="website" value="https://www.biotechinnovators.com" />
-            <column name="logo_url" value="https://cdn.biotechinnovators.com/logo.png" />
+            <column name="logo_url" value="biotech.png" />
             <column name="industry" value="Biotechnology" />
             <column name="date_joined" value="2023-08-05" />
         </insert>
@@ -97,7 +97,7 @@
             <column name="company_name" value="CloudNova" />
             <column name="description" value="Experts in cloud computing and digital transformation." />
             <column name="website" value="https://www.cloudnova.com" />
-            <column name="logo_url" value="https://cdn.cloudnova.com/logo.png" />
+            <column name="logo_url" value="cloudnova,png" />
             <column name="industry" value="Technology" />
             <column name="date_joined" value="2023-10-10" />
         </insert>
