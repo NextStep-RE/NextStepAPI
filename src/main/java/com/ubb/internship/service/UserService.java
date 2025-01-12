@@ -59,6 +59,19 @@ public class UserService {
         return userMapper.mapToDto(savedUser);
     }
 
+    public UserDto updateUser(Long id, UserRequestDto userDto) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("User not found"));
+
+        user.setBio(userDto.getBio());
+        user.setEmail(userDto.getEmail());
+        user.setFirstName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());
+        user.setPassword(userDto.getPassword());
+
+        return userMapper.mapToDto(userRepository.save(user));
+    }
+
     private UserDto attachCompanyDetailsToInternshipApplications(User user) {
         UserDto userDto = userMapper.mapToDto(user);
         for (int i = 0; i < userDto.getApplications().size(); i++) {
