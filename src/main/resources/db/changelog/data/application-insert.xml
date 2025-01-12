@@ -35,6 +35,30 @@
         </insert>
 
         <insert tableName="applications">
+            <column name="date_applied" value="2025-01-14" />
+            <column name="application_status" value="UPCOMING_INTERVIEW" />
+            <column name="user_id" value="1" />
+            <column name="internship_id" value="6" />
+            <column name="interview_date" value="2025-01-14" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-14" />
+            <column name="application_status" value="UPCOMING_INTERVIEW" />
+            <column name="user_id" value="1" />
+            <column name="internship_id" value="9" />
+            <column name="interview_date" value="2025-01-14" />
+        </insert>
+
+        <insert tableName="applications">
+            <column name="date_applied" value="2025-01-14" />
+            <column name="application_status" value="UPCOMING_INTERVIEW" />
+            <column name="user_id" value="1" />
+            <column name="internship_id" value="8" />
+            <column name="interview_date" value="2025-01-14" />
+        </insert>
+
+        <insert tableName="applications">
             <column name="date_applied" value="2025-01-05" />
             <column name="application_status" value="ACCEPTED" />
             <column name="user_id" value="1" />
