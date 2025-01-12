@@ -30,6 +30,11 @@ public class UserController {
         return ResponseEntity.ok(userService.getUserById(id));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<UserDto> updateUser(@PathVariable Long id, @RequestBody UserRequestDto userRequestDto) {
+        return ResponseEntity.ok(userService.updateUser(id, userRequestDto));
+    }
+
     @SneakyThrows
     @PostMapping
     public ResponseEntity<UserDto> createUser(@RequestBody UserRequestDto userDto) {
