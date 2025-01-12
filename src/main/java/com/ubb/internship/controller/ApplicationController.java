@@ -1,6 +1,7 @@
 package com.ubb.internship.controller;
 
 import com.ubb.internship.dto.ApplicationDto;
+import com.ubb.internship.dto.EventDto;
 import com.ubb.internship.dto.request.ApplicationRequestDto;
 import com.ubb.internship.service.ApplicationService;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +31,11 @@ public class ApplicationController {
     public ResponseEntity<ApplicationDto> createApplication(@RequestBody ApplicationRequestDto applicationDto) {
         ApplicationDto savedApplication = applicationService.addApplication(applicationDto);
         return ResponseEntity.created(new URI("/api/applications/" + savedApplication.getId())).build();
+    }
+
+    @GetMapping("/events")
+    public ResponseEntity<List<EventDto>> getUpcomingEventsForUser(@RequestParam Long userId) {
+        return ResponseEntity.ok(applicationService.getUpcomingEventsByUserId(userId));
     }
 
 }
