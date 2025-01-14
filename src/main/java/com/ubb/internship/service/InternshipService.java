@@ -54,9 +54,10 @@ public class InternshipService {
     }
 
     public InternshipDto getInternshipById(Long id) {
-        return internshipRepository.findById(id)
-                .map(internshipMapper::mapToDto)
+        Internship internship = internshipRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Internship not found with ID: " + id));
+
+        return attachCompanyDetailToSpecificInternship(internship);
     }
 
     @Transactional
